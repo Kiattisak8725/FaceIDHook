@@ -11,7 +11,6 @@ const config = {
     channelSecret: 'e0dbdefec57cd9062e9a74d5627cb996',
 
 };
-
 const client = new Client(config);
 
 app.use(bodyParser.json());
@@ -210,6 +209,12 @@ app.post('/webhook', (req, res) => {
 
     res.json({});
 });
+
+
+app.get('/', (req, res) => {
+    res.json({status:'welcome to Klongthom Hospital'})
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
